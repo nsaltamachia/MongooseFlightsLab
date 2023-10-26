@@ -1,14 +1,37 @@
 * {
   box-sizing: border-box;
-  
+}
+html {
+  background-image: url(https://images.unsplash.com/photo-1536108845120-d563881c8ed7?auto=format&fit=crop&q=80&w=1374&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* filter:brightness(.4) */
+}
+
+h1 {
+font-size: 40px;
+background-color: rgba(83, 83, 83, 0.85);
+border-radius: 5px;
+
 }
 body {
-  color: #424748;
+  
+  color: #ffffff;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+ 
+}
+th, td {
+background-color: rgba(83, 83, 83, 0.85);
+ border-radius: 5px;
 }
 nav {
+ background-color: rgba(83, 83, 83, 0.85);
+  border-radius: 5px;
+  padding: 15px;
   font-size: 20px;
+  padding: 15px;
+  display: inline-block;
 }
 a {
   color: #00B7FF;
@@ -17,6 +40,7 @@ a {
 
 table {
   margin-top: 30px;
+  max-width: mvw;
 }
 table thead th {
   font-size: 20px;
@@ -30,11 +54,23 @@ table td {
 }
 
 #new-form {
+  font-size: 20px;
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 22rem));
+  grid-template-columns: repeat(2, minmax(auto, auto));
+  background-color: rgba(83, 83, 83, 0.85);
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 15px;
+}
+#formText {
+  text-align: center;
+
 }
 
+select {
+  font-size: 20px;
+}
 #list {
 font-size: 18px;
 }
