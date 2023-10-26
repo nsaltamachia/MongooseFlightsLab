@@ -1,9 +1,9 @@
 * {
   box-sizing: border-box;
-  color: #424748;
+  
 }
 body {
-  
+  color: #424748;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -12,6 +12,11 @@ nav {
 }
 a {
   color: #00B7FF;
+}
+
+
+table {
+  margin-top: 30px;
 }
 table thead th {
   font-size: 20px;
@@ -44,4 +49,8 @@ font-size: 18px;
   padding: 4px;
   text-decoration: none;
   font-size: 14px;
+}
+
+.expired-flight {
+  color: red;
 }

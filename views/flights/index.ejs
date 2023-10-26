@@ -13,7 +13,7 @@
     </thead>
     <tbody>
     <% flights.forEach(function(f) { %>
-      <tr>
+      <tr class="<%= f.isExpired ? 'expired-flight' : "" %>">
         <td><%= f.airline %></td>
         <td><%= f.airport %></td>
         <td><%= f.flightNo %></td>

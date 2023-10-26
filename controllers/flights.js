@@ -1,4 +1,7 @@
 const Flight = require("../models/flight")
+// const newFlight = new Flight();
+
+
 
 module.exports = {
     index,
@@ -19,7 +22,15 @@ async function create(req, res) {
 }
 
 async function index(req, res) {
-    const allFlights = await Flight.find({});
+    const allFlights = await Flight.find({}).sort("departs");
+
+    // Adding the isExpired property (bonus)
+    const currentDate = new Date();
+    allFlights.forEach((flight) => {
+        flight.departs = new Date(flight.departs);
+        flight.isExpired = currentDate > flight.departs;
+        console.log(`Flight ${flight._id} - Departs: ${flight.departs}, isExpired: ${flight.isExpired}`);
+    })
     res.render("flights/index", {
         flights: allFlights,
         title: "All Flights"
