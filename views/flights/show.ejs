@@ -12,27 +12,35 @@
         <div><%= flight.flightNo %></div>
         <div>Departs: </div>
         <div><%= flight.departs %></div>
-        <div>Destinations: </div>
-        <div><%= flight.destination.airport %></div>
-        <div>Destinations: </div>
-        <div><%= flight.destination.arrival %></div>
+        <div>Destinations:</div>
+        <div><% flight.destination.forEach(function(d) { %>
+            <li><%= d.airport %><br>
+            <!-- <li><%= d.arrival %></li> -->
+            <li><%= d.arrival.toDateString() %></li>
+            <li><%= d.arrival.toLocaleTimeString() %></li>
+            <br><br>
+              <% }) %>     
+        </div>
+        
+
         </section>
 
 <!-- // refactor to fit destination model's two properties: arrival airport (select) and date/time (date w the same formatting added to departure info) -->
-<br><br><h2>Reviews</h2>
-<form id="add-review-form" method="POST"
-  action="/movies/<%= movie._id %>/reviews">
-  <label>Review:</label>
-  <textarea name="content"></textarea>
-  <label>Rating:</label>
-  <select name="rating">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5" selected>5</option>
-  </select>
-  <input type="submit" value="Add Review">
+<br><br><h2>Add Destinations</h2>
+<form id="add-destination-form" method="POST"
+  action="/flights/<%= flight._id %>/destinations">
+  <label id="formText">Destination:</label>
+    <select name="airport">
+        <option value="AUS">Austin</option>
+        <option value="DFW">Dallas-Ft. Worth</option>
+        <option value="DEN">Denver</option>
+        <option value="LAX">Los Angeles</option>
+        <option value="SAN">San Diego</option>
+    </select>
+    <label id="formText">Arrival:</label>
+        <input type="datetime-local" id="datetime" name="arrival">
+        
+  <input type="submit" value="Add Destination">
 </form>
 
 

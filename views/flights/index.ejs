@@ -12,7 +12,6 @@
       <th>Flight No.</th>
       <th>Departure (Date)</th>
       <th>Departure (Time)</th>
-      <th>Destinations</th>
     </tr>
     </thead>
     <tbody>
@@ -24,8 +23,6 @@
         <td><%= f.flightNo %></td>
         <td><%= f.departs.toDateString() %></td>
         <td><%= f.departs.toLocaleTimeString() %></td>
-        <td><%= f.destinations %></td>
-        
       </tr>
       <% }); %>
     </tbody>

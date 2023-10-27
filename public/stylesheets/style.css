@@ -17,6 +17,13 @@ h1 {
   border-radius: 5px;
 }
 
+h2 {
+  padding: 5px;
+  display: inline-block;
+  font-size: 25px;
+  background-color: rgba(83, 83, 83, 0.85);
+  border-radius: 5px;
+}
 body {
   color: #ffffff;
   padding: 50px;
@@ -95,4 +102,17 @@ font-size: 18px;
   color: red;
 }
 
+#add-destination-form {
 
+}
+
+#add-destination-form {
+  font-size: 20px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, minmax(auto, auto));
+  background-color: rgba(83, 83, 83, 0.85);
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 5px;
+}

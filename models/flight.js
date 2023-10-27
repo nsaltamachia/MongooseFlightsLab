@@ -38,7 +38,8 @@ const flightSchema = new Schema({
     departs: {
         type: "date",
     },
-    destinations: [destinationSchema],
+    destination: [destinationSchema],
+   
 },
     { timestamps: true }
 );
