@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-  <h1>Add A New Flight</h1>
+  <h1>Add A New Flight</h1><br>
     <%- include('../partials/nav') %>
 
 <form id="new-form" action="/flights" method="POST">
@@ -21,7 +21,16 @@
         <input type="text" name="flightNo">
     <label id="formText">Departs:</label>
         <input type="datetime-local" id="datetime" name="departs">
-    <input type="submit" value="Add Flight">
+        <label id="formText">Destinations:</label>
+    <select name="destinations">
+        <option value="AUS">Austin</option>
+        <option value="DFW">Dallas-Ft. Worth</option>
+        <option value="DEN">Denver</option>
+        <option value="LAX">Los Angeles</option>
+        <option value="SAN">San Diego</option>
+    </select>
+    <input id="Submit" type="submit" value="Add Flight">
+    
 </form>
 
 <%- include('../partials/footer') %>

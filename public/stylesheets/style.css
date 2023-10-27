@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 html {
   background-image: url(https://images.unsplash.com/photo-1536108845120-d563881c8ed7?auto=format&fit=crop&q=80&w=1374&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   background-size: cover;
@@ -9,39 +10,41 @@ html {
 }
 
 h1 {
-font-size: 40px;
-background-color: rgba(83, 83, 83, 0.85);
-border-radius: 5px;
-
+  padding: 10px;
+  display: inline-block;
+  font-size: 40px;
+  background-color: rgba(83, 83, 83, 0.85);
+  border-radius: 5px;
 }
+
 body {
-  
   color: #ffffff;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
- 
 }
+
 th, td {
 background-color: rgba(83, 83, 83, 0.85);
  border-radius: 5px;
 }
+
 nav {
  background-color: rgba(83, 83, 83, 0.85);
   border-radius: 5px;
-  padding: 15px;
   font-size: 20px;
   padding: 15px;
   display: inline-block;
 }
+
 a {
   color: #00B7FF;
 }
-
 
 table {
   margin-top: 30px;
   max-width: mvw;
 }
+
 table thead th {
   font-size: 20px;
   padding: 5px;
@@ -53,7 +56,7 @@ table td {
   text-align: center;
 }
 
-#new-form {
+#new-form, #show-page {
   font-size: 20px;
   display: grid;
   grid-gap: 10px;
@@ -71,6 +74,7 @@ table td {
 select {
   font-size: 20px;
 }
+
 #list {
 font-size: 18px;
 }
@@ -81,7 +85,7 @@ font-size: 18px;
 
 #list a {
   border-radius: 4px;
-  background-color: #B8C0C2;
+  background-color: #ffffff;
   padding: 4px;
   text-decoration: none;
   font-size: 14px;
@@ -90,3 +94,5 @@ font-size: 18px;
 .expired-flight {
   color: red;
 }
+
+

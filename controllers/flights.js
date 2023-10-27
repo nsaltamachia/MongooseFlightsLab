@@ -7,7 +7,18 @@ module.exports = {
     index,
     new: newFlight,
     create,
+    show,
 }
+
+async function show(req, res) {
+    try {
+        const flight = await Flight.findById(req.params.id).populate("destinations");
+    res.render("flights/show", { title: "Flight Info", flight});
+    } catch (err) {
+
+    }
+}
+
 async function create(req, res) {
     for (let key in req.body) {
         if (req.body[key] === "") delete req.body[key];
