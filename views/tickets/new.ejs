@@ -2,6 +2,12 @@
   <h1>Add A New Ticket</h1><br>
     <%- include('../partials/nav') %>
 
+    <div id="ticket-warning">Before adding, please ensure that the ticket you are adding is not already in the following list:</div>
+    <section id="badge-container">
+      <% tickets.forEach(function(t) { %>
+      <article class="badge"><%=t.seat%></article>
+      <%})%>
+    </section>
 <form id="add-ticket-form" action="/tickets" method="POST">
   <label>Seat:</label>
   <input name="seat" required pattern="[A-F][1-9]\d?">

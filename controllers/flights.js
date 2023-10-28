@@ -12,14 +12,11 @@ module.exports = {
 }
 
 async function show(req, res) {
-  const flight = await Flight.findById(req.params.id);
-  res.render('flights/show', { title: 'Flight Details', flight });
-}
+    const flight = await Flight.findById(req.params.id); {
 
-        
-
-    
-
+            res.render("flights/show", { flight })
+        }
+    }
 
 async function create(req, res) {
     for (let key in req.body) {

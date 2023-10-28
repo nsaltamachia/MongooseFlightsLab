@@ -2,24 +2,26 @@ const Flight = require("../models/flight");
 const Ticket = require("../models/ticket");
 
 module.exports = {
-    new: newPerformer,
+    new: newTicket,
     create,
 }
 
-async function newPerformer(req, res) {
-    try{
-    const tickets = await Ticket.find({});
+async function newTicket(req, res) {
+    try {
+        const tickets = await Ticket.find({}).sort("seat");
+        
         res.render("tickets/new", { tickets });
-    } catch {
-        console.log("somethings wrong with the new ticket function");
-        }
-};
+    } catch (err) {
+        console.log("err with the new function")
+    }
+}
 
 async function create(req, res) {
     try {
-        await Ticket.create(req.body);
+        const ticket = await Ticket.create(req.body);
+        const flight = Flight.findById(req.body._id)
     } catch (err) {
         console.log("err with the create function")
     }
-    res.redirect("/flights")
+    res.redirect(`/flights/${flight._id}`)
 }

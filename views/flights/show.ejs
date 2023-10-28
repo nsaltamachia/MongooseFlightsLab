@@ -20,10 +20,12 @@
             <br><br>
               <% }) %>     
         </div>
-     
+        <div>
+          <!-- Display tickets that have already been sold (same code from the ticket warning in tickets/new?) -->
+        </div>
         </section>
 
-<!-- // refactor to fit destination model's two properties: arrival airport (select) and date/time (date w the same formatting added to departure info) -->
+
 <br><br><h2>Add Destinations</h2>
 <form id="add-destination-form" method="POST"
   action="/flights/<%= flight._id %>/destinations">
@@ -37,11 +39,11 @@
     </select>
     <label id="formText">Arrival:</label>
         <input type="datetime-local" id="datetime" name="arrival">
-        
-  <input type="submit" value="Add Destination">
+        <input type="submit" value="Add Destination">
 </form>
 
+<a id="newTicketLink" href="/tickets/new">Add A New Ticket</a>
 
 
 
-    <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>
