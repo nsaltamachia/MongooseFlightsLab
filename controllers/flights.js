@@ -1,4 +1,5 @@
-const Flight = require("../models/flight")
+const Flight = require("../models/flight");
+const Ticket = require("../models/ticket");
 // const newFlight = new Flight();
 
 
@@ -11,13 +12,14 @@ module.exports = {
 }
 
 async function show(req, res) {
-    try {
-        const flight = await Flight.findById(req.params.id);
-    res.render("flights/show", { title: "Flight Info", flight});
-    } catch (err) {
-        console.log(err)
-    }
+  const flight = await Flight.findById(req.params.id);
+  res.render('flights/show', { title: 'Flight Details', flight });
 }
+
+        
+
+    
+
 
 async function create(req, res) {
     for (let key in req.body) {
@@ -40,7 +42,7 @@ async function index(req, res) {
     allFlights.forEach((flight) => {
         flight.departs = new Date(flight.departs);
         flight.isExpired = currentDate > flight.departs;
-        // console.log(`Flight ${flight._id} - Departs: ${flight.departs}, isExpired: ${flight.isExpired}`);
+        console.log(`Flight ${flight._id} - Departs: ${flight.departs}, isExpired: ${flight.isExpired}`);
     })
     res.render("flights/index", {
         flights: allFlights,

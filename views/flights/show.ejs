@@ -15,14 +15,12 @@
         <div>Destinations:</div>
         <div><% flight.destination.forEach(function(d) { %>
             <li><%= d.airport %><br>
-            <!-- <li><%= d.arrival %></li> -->
             <li><%= d.arrival.toDateString() %></li>
             <li><%= d.arrival.toLocaleTimeString() %></li>
             <br><br>
               <% }) %>     
         </div>
-        
-
+     
         </section>
 
 <!-- // refactor to fit destination model's two properties: arrival airport (select) and date/time (date w the same formatting added to departure info) -->
@@ -42,6 +40,7 @@
         
   <input type="submit" value="Add Destination">
 </form>
+
 
 
 
