@@ -12,12 +12,18 @@ module.exports = {
 }
 
 async function show(req, res) {
-    const flight = await Flight.findById(req.params.id); {
+    try {
+        const flight = await Flight.findById(req.params.id);
+        const tickets = await Ticket.find({ flight: flight._id });
 
-            res.render("flights/show", { flight })
-        }
+        res.render("flights/show", { flight, tickets }); // Pass both flight and tickets
+    } catch (err) {
+        console.log(err);
+        res.status(500).send("An error occurred.");
     }
+}
 
+   
 async function create(req, res) {
     for (let key in req.body) {
         if (req.body[key] === "") delete req.body[key];

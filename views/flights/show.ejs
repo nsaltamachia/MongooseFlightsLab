@@ -10,19 +10,26 @@
         <div><%= flight.airport %></div>
         <div>Flight Number: </div>
         <div><%= flight.flightNo %></div>
+        <a id="newTicketLink" href="/tickets/new">Add A New Ticket</a> <br>
         <div>Departs: </div>
         <div><%= flight.departs %></div>
         <div>Destinations:</div>
         <div><% flight.destination.forEach(function(d) { %>
-            <li><%= d.airport %><br>
+            <li><%= d.airport %><li>
             <li><%= d.arrival.toDateString() %></li>
             <li><%= d.arrival.toLocaleTimeString() %></li>
             <br><br>
-              <% }) %>     
+              <% }) %> 
+              
         </div>
-        <div>
-          <!-- Display tickets that have already been sold (same code from the ticket warning in tickets/new?) -->
-        </div>
+        <div>Tickets Sold:</div>
+            <ul>
+              <% tickets.forEach(function(t) { %>
+                <li><%= t.seat %></li>
+              <% }) %>
+              </ul>
+
+          
         </section>
 
 

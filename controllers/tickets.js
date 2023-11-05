@@ -16,12 +16,30 @@ async function newTicket(req, res) {
     }
 }
 
+
 async function create(req, res) {
     try {
         const ticket = await Ticket.create(req.body);
-        const flight = Flight.findById(req.body._id)
+        const flight = await Flight.findById(req.body._id);
+        if (!flight) {
+            return res.status(404).send('Flight not found');
+        }
+        res.redirect(`/flights/${flight._id}`)
     } catch (err) {
-        console.log("err with the create function")
+        console.log(err)
     }
-    res.redirect(`/flights/${flight._id}`)
 }
+
+ 
+// async function create(req, res) {
+//     try {
+//         const ticket = await Ticket.create(req.body);
+//         const flight = await Flight.findById(req.body._id);
+//         if (!flight) {
+//             return res.status(404).send('Flight not found');
+//         }
+//         res.redirect(`/flights/${flight._id}`)
+//     } catch (err) {
+//         console.log(err)
+//     }
+// }
